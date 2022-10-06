@@ -1,5 +1,7 @@
 # Svelte Tap Hold
-A simple action for handle tap and hold action for Svelte/SvelteKit.
+A simple handle tap and hold action for Svelte/SvelteKit. [Demo](https://svelte.dev/repl/44fdd823b2004f089e997d5f6ba2fe58?version=3.50.1).
+
+
 
 # Instalation
 ```bash
