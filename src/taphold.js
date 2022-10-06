@@ -10,7 +10,11 @@ export function taphold(node, interval = 200) {
         intervalIds = []
     }
 
-    const tapAndHold = () => {
+    const tapAndHold = (event) => {
+        // right click
+        if (event.which === 3) {
+            return
+        }
         handler() // tap
         intervalIds.push(setInterval(() => handler(), interval)) // hold
 
