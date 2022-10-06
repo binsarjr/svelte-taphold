@@ -1,0 +1,10 @@
+{
+  "name": "svelte-taphold",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Binsar Dwi Jasuma <binsarjr121@gmail.com>",
+  "license": "MIT",
+  "description": "Svelte Action for handling tap and hold action",
+  "repository": "https://github.com/binsarjr/svelte-taphold",
+  "private": false
+}
