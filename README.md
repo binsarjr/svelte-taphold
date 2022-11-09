@@ -1,38 +1,42 @@
-# create-svelte
+# Svelte Tap Hold
+Minimalistic tap and hold component for Svelte/SvelteKit.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+## Installation
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+// Using Yarn to install
+yarn add --dev svelte-taphold
 
-# create a new project in my-app
-npm create svelte@latest my-app
+// or if you prefer NPM
+npm install --save-dev svelte-taphold
 ```
 
-## Developing
+## Usage Sample
+```svelte
+<script>
+  import { taphold } from 'svelte-taphold'
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+  let ticks = 0 // show how many ticks button has been hold
+  let interval = 100
 
-```bash
-npm run dev
+  const onTapHold = () => ticks++
+  const reset = () => ticks = 0
+</script>
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<h1>Tap and Hold {ticks}x</h1>
+<label for="interval">Interval</label>
+<input
+  id="interval"
+  placeholder="interval"
+  bind:value={interval}
+  type="number"/>
+
+<!-- svelte-taphold on button -->
+<button
+  use:taphold={interval}
+  on:taphold={onTapHold} >
+  Tap and Hold
+</button>
+
+<button on:click={reset}>Reset Iteration</button>
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
